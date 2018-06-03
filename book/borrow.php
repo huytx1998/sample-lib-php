@@ -1,8 +1,19 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+$username = $_SESSION['username'];
+}
+
+$servername = "localhost";
+
+$conn = mysqli_connect($servername, "root", "", "book");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>News</title>
+<title>Borrowed</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,24 +54,54 @@ width: 100%;
   <img id="big_picture" src="image/Library.jpg" width="100%"> 
 </div>
 
-<div class = "container">
-<div class="row">
-<h1 style="text-align: center;
-margin-bottom: 25px;">
-	
-	<?php echo $_GET["title"]; ?>
-	
-</h1>
 
 
-</div>
-<div class ="row">
-<p>
-	<?php echo $_GET["content"]; ?>
-</p>
 
+<h3> You have just borrowed: </h3>
+
+<div class = "col-md-5">
+  <div class="jumbotron">
+<img src="image/<?php echo $_GET['image_name'] ?>">
+<h2> <?php 
+$name = $_GET['name'];
+echo $_GET['name']; ?></h2>
+<p><?php echo $_GET['description']; ?></p>
 </div>
 </div>
+
+<div class = "col-md-5">
+  <div class="jumbotron">
+<p>Due date will be:</p>
+<br>
+<?php 
+$quantity = "UPDATE books SET quantity = quantity - 1 WHERE name = '$name';";
+$quantity_minus = mysqli_query($conn, $quantity);
+$dueDate = date("d-m-Y", strtotime("+ 7 day") ); 
+ ?>
+ <p><?php echo $dueDate ?></p>
+</div>
+</div>
+</div>
+
+
+
+ 
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <footer class="footer">
     <div class="row">
@@ -79,3 +120,7 @@ margin-bottom: 25px;">
    Contact information: huytx0909@gmail.com <br> 
    Phone: 01287.173.832  </p></b>               
  </footer>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> -->
+</body>
+</html>
