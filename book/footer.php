@@ -1,6 +1,6 @@
 
     <footer class="footer">
-      <div class="row">
+      <div class="row text-center">
         <div class=" col-xs-4">
          <img src="image/Hanu.jpg">
         </div>

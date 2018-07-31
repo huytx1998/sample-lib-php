@@ -1,7 +1,6 @@
 
 <?php 
 include("header.php");
-$title = "abc";
 session_start();
 if (isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
@@ -12,7 +11,19 @@ $servername = "localhost";
 $conn = mysqli_connect($servername, "root", "", "book");
 ?>
 
+<?php if (isset($_SESSION['username'])) { ?>
+  <style> #login_button {display: none} #register_button {display: none;} </style>
+  <?php } ?> 
 
+  <?php if (isset($_SESSION['username'])) { ?>
+  <li> <a href="#">Welcome <?php echo "<strong> $username, </strong>";
+  echo "search for your book here:"; ?></a></li>
+  <?php } ?> 
+
+<form  method="GET" action="searchResult.php" target="_blank">
+  <input class = "form-control" type="text" placeholder="Search for books.." name="search">
+  <input class="btn btn-default btn-lg" type="submit" name="search_button" value="Search" class="btn">
+</form>
 
 <title>Home Page</title>
 <h3>News</h3>
@@ -103,7 +114,7 @@ if ($rows %3 == 1) {
           <input type="text" name="title" value ="<?php echo $row3_dp['title'];?>" style="display:none">
            <h2> <?php echo $row3_dp['title'];?></h2>
           <input type="text" name="content" value ="<?php echo $row3_dp['content'];?>" style="display:none">
-        <p type="text" name="content"> <?php echo $row2_dp['content'];?></p>
+        <p type="text" name="content"> <?php echo $row3_dp['content'];?></p>
        </form>
       </div>
   
