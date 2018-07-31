@@ -24,7 +24,7 @@ if (mysqli_num_rows($result1) >= 1) {
 } else {
 	if (strlen($username) == 0 || strlen($email) == 0 || strlen($password) == 0 || strlen($password2) == 0 ) {
 		$_SESSION['message'] = "Not enough info!"; 
-	}  else	if ($password == $password2 && substr($id, 0, 2) < 18) {
+	}  else	if ($password == $password2 && substr($id, 0, 2) < 18 && strlen($id)== 10) {
 	//create user to enter database
 		$createUser = "CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'";
 		mysqli_query($conn, $createUser); 
@@ -52,12 +52,27 @@ if (mysqli_num_rows($result1) >= 1) {
 <html>
 <head>
 <title>Register Page</title>
+<link rel="icon" href="image/favicon.ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <div class="jumbotron"> -->
+  <br>
+  <img src="image/banner.jpg" style="width: 100%;">
+  <h3>Hanu Library website</h3>
+</div>
+</br>
 <body>
 <div class="header"> 
 	<h1> Register </h1>
@@ -88,12 +103,12 @@ if (isset($_SESSION['message'])) {
 
 		<tr>
 			<td>Phone Number: </td>
-			<td><input type="text" name="phone" class="textInput"></td>
+			<td><input type="number" name="phone" class="textInput"></td>
 		</tr>
 
 		<tr>
 			<td>Student ID: </td>
-			<td><input type="text" name="id" class="textInput"></td>
+			<td><input type="number" name="id" class="textInput"></td>
 		</tr>
 
 		<tr>

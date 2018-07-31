@@ -1,8 +1,9 @@
 <?php 
+
 session_start();
 if($_SESSION['username'] == "admin") {
-	$conn = mysqli_connect("localhost", "admin","admin", "ecommerce");
-	$sql = "SELECT * FROM products";
+	$conn = mysqli_connect("localhost", "admin","admin", "book");
+	$sql = "SELECT * FROM books";
 	$sql2 = "SELECT * FROM users";
 	$query = mysqli_query($conn, $sql);
 	$query2 = mysqli_query($conn, $sql2);
@@ -18,11 +19,16 @@ else {
 
 ?>
 
+<?php include 'header.php'; ?>
+
+<?php include 'footer.php'; ?>
+
 
 
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="image/favicon.ico">
 	<title> Admin Page </title>
 	<link rel="stylesheet" type="text/css" href="style2.css">
 </head>
@@ -30,19 +36,18 @@ else {
 	
 	<div class = "header">
 		<h1>Admin Page</h1>
-		<h3>Product table</h3>
+		<h3>Book table</h3>
 	</div> <br>
 
 	<table  class="data-table">
-		<caption class="title">Product</caption>
+		<caption class="title">Books</caption>
 		<thead>
 			<tr>
 				<th>Product id</th>
 				<th>Name</th>
 				<th>Description</th>
-				<th>Price</th>
 				<th>Date</th>
-				<th>Condition</th>
+				
 			</tr>
 		</thead>
 		
@@ -56,9 +61,8 @@ else {
 				<td>'.$row['id'].'</td>
 				<td>'.$row['name'].'</td>
 				<td>'.$row['description'].'</td>
-				<td>'.$row['unit_price'].'</td>
-				<td>'. date('F d, Y', strtotime($row['created_at'])) . '</td>
-				<td>'.$row['condition'].'</td>
+				
+				<td>'.$row['quantity'].'</td>
 				</tr>';
 
 			}
@@ -72,9 +76,9 @@ else {
 				<input type="submit" name="Add_button" value=" Add product"></td>
 			</tr>
 
-			<td>
+			<!-- <td>
 				<input type="submit" name="Update_button" value=" Update product"></td>
-			</tr>
+			</tr> -->
 
 			<td>
 				<input type="submit" name="Delete_button" value=" Delete product"></td>
@@ -120,9 +124,9 @@ else {
 				<input type="submit" name="Add_button" value=" Add User"></td>
 			</tr>
 
-			<td>
+		<!-- 	<td>
 				<input type="submit" name="Update_button" value=" Update User"></td>
-			</tr>
+			</tr> -->
 
 			<td>
 				<input type="submit" name="Delete_button" value=" Delete User"></td>

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['username']== "admin") {
-	$conn = mysqli_connect("localhost", "admin","admin", "ecommerce");
+	$conn = mysqli_connect("localhost", "admin","admin", "book");
 	if ($conn) {
 		echo "Querying Users.....";
 	}

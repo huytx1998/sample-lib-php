@@ -12,6 +12,7 @@ $conn = mysqli_connect($servername, "root", "", "book");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="image/favicon.ico">
 <title>Search Result</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +20,7 @@ $conn = mysqli_connect($servername, "root", "", "book");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body style="min-height: 100%;">
 <!-- <div class="jumbotron"> -->
 <br>
 <img src="image/banner.jpg" style="width: 100%;">
@@ -72,7 +73,7 @@ while ($row = mysqli_fetch_assoc($raw_results)) { ?>
    <input type="text" name="image_name" value = "<?php echo $row['image'];?> "
     style="display:none">
    
-   <input type = "submit" name="borrow" class="btn btn-primary" value ="Borrow"/>
+   <input type = "submit" id="borrow_btn" name="borrow" class="btn btn-primary" value ="Borrow"/>
     
     <input type="text" name="name" value ="<?php echo $row['name'];?> "
     style="display:none">
@@ -84,6 +85,20 @@ while ($row = mysqli_fetch_assoc($raw_results)) { ?>
     style="display:none">
     <p type="text" name="quantity"> Available : <?php echo $row['quantity'];?></p>
  
+
+ <?php
+$_SESSION['quantity'] = $row['quantity'];
+  if ($_SESSION['quantity'] < 1) { ?>
+   <style> 
+    #borrow_btn {
+      display: none;
+    }
+  </style>
+ <?php
+  echo "<strong> Not Available For Borrowing </strong>";
+  } ?>
+
+
    </form>
   </div>
 </div>
@@ -92,22 +107,8 @@ while ($row = mysqli_fetch_assoc($raw_results)) { ?>
 
 <?php } } ?>
 
+<?php
+
+include 'footer.php'; ?>
 
 
-<footer class="footer">
-  <div class="row">
-    <div class="border col-xs-4"> <img src="image/Hanu.jpg"></div>
-    <div class="border col-xs-4"> Adress: Km9 Nguyen Trai, Thanh Xuan dist, Hanoi <br> 
-      <p>Phone: 024-132987 <br> Anything here <br> Also something here </p>       
-    </div>
-    <div class="border col-xs-4">Find us on social media: <br>
-     <a href="https:facebook.com/huytx0909" target="_blank"> <i style="font-size:24px"  class="fa">&#xf230; Facebook</i> </a> <br>
-     <a href="https:Instagram.com" target="_blank"> <i style="font-size:24px" class="fa">&#xf16d; Instagram</i> </a> <br>
-     <a href="https:Twitter.com" target="_blank"> <i style="font-size:24px" class="fa">&#xf099; Twitter</i> </a>
-   </div>
- </div>
- <br>
- <b><p>Created by: Huytx  <br>
- Contact information: huytx0909@gmail.com <br> 
- Phone: 01287.173.832  </p></b>               
-</footer>
