@@ -1,26 +1,24 @@
-<?php $title="Header Page";  ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="stylesheet" type="text/css" href="slider.css">
-<link rel="icon" href="image/favicon.ico">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<title><?php echo $title; ?></title>
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="slider.css">
+<link rel="icon" href="image/favicon.ico">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+
 <!-- <div class="jumbotron"> -->
-  <br>
+<br>
   <img src="image/banner.jpg" style="width: 100%;">
   <h3>Hanu Library website</h3>
-</div>
+
 </br>
 
 <div class="container">
@@ -44,10 +42,13 @@
 <div id="big_picture" class="jumbotron">
   <h1>Welcome to Hanu's Library website</h1>
   <div class="slider-holder">
+    
+    <div>
         <span id="slider-image-1"></span>
         <span id="slider-image-2"></span>
         <span id="slider-image-3"></span>
-        
+    </div>
+
         <div class="image-holder">
             <img src="image/slider/lib.jpg" class="slider-image" />
             <img src="image/slider/lib1.jpg" class="slider-image" />
@@ -60,4 +61,5 @@
             <a href="#slider-image-3" class="slider-change"></a>
         </div>
     </div>
+  </div>
 </div>

@@ -1,12 +1,16 @@
 * {
     box-sizing: border-box;
-    width: 100%;
 }
 
 body {
-	padding: 0px;
-	margin: 0px;
-	min-height: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+#news_img {
+	/*display: none;*/
+	width: 70%;
+	height: auto;
 }
 .header{
 	background-color: #1A3333;
@@ -17,9 +21,7 @@ body {
 	padding: 5px;
 }
 form{
-	width: 40%;
 	padding: 30px;
-	border: 1px solid #cbcbcb;
 	margin: 5px auto;
 }
 .textInput {
@@ -40,7 +42,3 @@ form{
 	text-align: center;
 	padding-top: 10px;
 }
-td {
-	text-align: right;
-}
-
