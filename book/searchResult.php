@@ -18,7 +18,7 @@ include('header.php');
   <?php while ($row = mysqli_fetch_assoc($raw_results)) { ?>
   
 
-  <div class="col-md-4 searchRs jumbotron">
+  <div class="col-md-4 searchRs ">
     <div> <img src="image/<?php echo $row['image'];  ?>" alt="" class="img-rounded"
       style="max-width: 250px; height:250px;">     </div>
      <form method="GET" action="borrow.php" target="_blank"> <br>   
@@ -37,12 +37,17 @@ include('header.php');
 
    <?php
       $_SESSION['quantity'] = $row['quantity'];
-      echo $_SESSION['quantity'];
       if ($_SESSION['quantity'] < 1) {
    ?>
+
+<script type="text/javascript">
+   document.getElementById('borrow_btn').id = 'two';
+</script>
+      
+     <p> Cannot borrow </p>
      <style> 
-      #borrow_btn {
-        /*display: none;*/
+      #two {
+        display: none;
       }
     </style>
 
