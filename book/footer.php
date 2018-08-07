@@ -1,8 +1,12 @@
 
+</body>
+
     <footer class="footer">
-      <div class="row text-center">
+      <div class="row">
         <div class=" col-xs-4">
-         <img src="image/Hanu.jpg">
+         <img src="image/Hanu.jpg"> <br>
+         Adress: Km9 Nguyen Trai, Thanh Xuan dist, Hanoi <br> 
+        <p>Phone: 024-132987 <br> Hotline: 0437326132 <br> Hanu's Library </p>   
         </div>
 
         <div class="col-xs-4"> <b><p>Created by: Huytx  <br>
@@ -19,8 +23,7 @@
    </div>
 
    <br>
-   Adress: Km9 Nguyen Trai, Thanh Xuan dist, Hanoi <br> 
-        <p>Phone: 024-132987 <br> Hotline: 0437326132 <br> Hanu's Library </p>   
+   
               
  </footer> 
 </html>

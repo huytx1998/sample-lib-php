@@ -58,24 +58,21 @@ width: 100%;
 
 <h3>Have found:</h3>
 
+<div class="col-md-4 jumbotron" >
+
 <?php if (isset($_GET['search'])) {
 $sql = "SELECT * FROM books WHERE (`name` LIKE '%".$_GET['search']."%') OR (`description` LIKE '%".$_GET['search']."%')";
 $raw_results = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($raw_results)) { ?>
-<div class="col-md-4">
-<div class="jumbotron"> 
+
+<!-- <div class="jumbotron">  -->
   <div> <img src="image/<?php echo $row['image'];  ?>" alt="" class="img-rounded"
     style="max-width: 250px; height:250px;"> 
-    
-   <form method="GET" action="borrow.php" target="_blank"> <br>
-   
-   <input type="text" name="image_name" value = "<?php echo $row['image'];?> "
-    style="display:none">
-   
+   <form method="GET" action="borrow.php" target="_blank"> <br>   
+   <input type="text" name="image_name" value = "<?php echo $row['image'];?>" style="display:none">
    <input type = "submit" id="borrow_btn" name="borrow" class="btn btn-primary" value ="Borrow"/>
-    
-    <input type="text" name="name" value ="<?php echo $row['name'];?> "
+   <input type="text" name="name" value ="<?php echo $row['name'];?> "
     style="display:none">
     <h2> <?php echo $row['name'];?></h2>
     <input type="text" name="description" value ="<?php echo $row['description'];?> "

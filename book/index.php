@@ -1,4 +1,3 @@
-
 <?php 
 include("header.php");
 session_start();
@@ -28,7 +27,7 @@ $conn = mysqli_connect($servername, "root", "", "book");
 <title>Home Page</title>
 <h3>News</h3>
 
-<div class="row">
+<div class="row news_display text-center">
   <div class="col-md-4">
 
 <?php 
@@ -63,7 +62,7 @@ if ($rows %3 == 1) {
 
    while($row1_dp = mysqli_fetch_assoc($sql1_result)) {
 	?>
-        <img id="news_img" src="image/<?php echo $row1_dp['image'];?>"> 
+        <img class="jumbotron" id="news_img" src="image/<?php echo $row1_dp['image'];?>"> 
          <form method="GET" action="news.php" target="_blank"> 
           <input type = "submit" class="btn btn-primary" value ="Read More"/>
           <input type="text" name="title" value ="<?php echo $row1_dp['title'];?>" style="display:none">
@@ -85,7 +84,7 @@ if ($rows %3 == 1) {
   ?>
   
   <div>
-        <img id="news_img" src="image/<?php echo $row2_dp['image'];  ?>" > 
+        <img class="jumbotron" id="news_img" src="image/<?php echo $row2_dp['image'];  ?>" > 
          <form method="GET" action="news.php" target="_blank"> 
           <input type = "submit" class="btn btn-primary" value ="Read More"/>
           <input type="text" name="title" value ="<?php echo $row2_dp['title'];?>" style="display:none">
@@ -108,7 +107,7 @@ if ($rows %3 == 1) {
   ?>
   
   <div>
-        <img id="news_img" src="image/<?php echo $row3_dp['image'];  ?>" > 
+        <img class="jumbotron" id="news_img" src="image/<?php echo $row3_dp['image'];  ?>" > 
          <form method="GET" action="news.php" target="_blank"> 
           <input type = "submit" class="btn btn-primary" value ="Read More"/>
           <input type="text" name="title" value ="<?php echo $row3_dp['title'];?>" style="display:none">
@@ -121,8 +120,6 @@ if ($rows %3 == 1) {
   <?php } ?>
   </div>
 </div>
-
-  </body>
 
 
 

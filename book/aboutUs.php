@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("header.php");
 if (isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
 }
@@ -20,14 +21,8 @@ $conn = mysqli_connect($servername, "root", "", "book");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
 
-  <br>
-  <img src="image/banner.jpg" style="width: 100%;">
-  <h3>Hanu Library website</h3>
-</div>
-</br>
 
 <div class="container">
 <ul class="nav nav-pills navbar ">
@@ -46,15 +41,6 @@ $conn = mysqli_connect($servername, "root", "", "book");
   <li> <a href="#">Welcome <?php echo "<strong> $username </strong>" ?></a></li>
   <?php } ?>   
 </ul> 
-
-<div id="big_picture" class="jumbotron">
-  <h1>Welcome to Hanu's Library website</h1>
-  <style> .big_picture {
-width: 100%;
-}   </style>
-  <img id="big_picture" src="image/Library.jpg" width="100%"> 
-</div>
-
 
 
 
