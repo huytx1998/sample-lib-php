@@ -19,7 +19,7 @@ $conn = mysqli_connect($servername, "root", "", "book");
   echo "search for your book here:"; ?></a></li>
   <?php } ?> 
 
-<form  method="GET" action="searchResult.php" target="_blank">
+<form id="searchBox"  method="GET" action="searchResult.php" target="_blank">
   <input class = "form-control" type="text" placeholder="Search for books.." name="search">
   <input class="btn btn-default btn-lg" type="submit" name="search_button" value="Search" class="btn">
 </form>

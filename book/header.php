@@ -10,6 +10,7 @@
 <link rel="icon" href="image/favicon.ico">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -57,7 +58,7 @@
 </nav>
 </header>
 
-  <div id="big_picture" class="jumbotron text-center" style="width: 100%;">
+  <div id="big_picture" class="jumbotron text-center">
       <h1>Welcome to Hanu's Library website</h1>
       <img  src="image/Library.jpg"> 
   </div>
