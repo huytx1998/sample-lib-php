@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 
 $db = mysqli_connect($servername, "root", "", "book");
-
+include('header.php');
 
 
 if (isset($_POST['login_button'])) {
@@ -26,42 +26,16 @@ if (isset($_POST['login_button'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="icon" href="image/favicon.ico">
-	<title>Login Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-</head>
-<body>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-
-<!-- <div class="jumbotron"> -->
-  <br>
-  <img src="image/banner.jpg" style="width: 100%;">
-  <h3>Hanu Library website</h3>
-</div>
-</br>
-
-
-	<div class="header"> 
-		<h1> Log in </h1>
-	</div>
-
+<div class="text-center"> 
+	<h1> Log in </h1>
+	
 	<?php 
 	if (isset($_SESSION['message'])) {
 		echo "<div id = 'error_msg'>".$_SESSION['message']."</div>";
 		unset($_SESSION['message']);
 	} ?>
-	<div class = "content">
+
+	<div>
 		<form method="POST" action="login.php">
 			<table>
 				<tr>
@@ -81,6 +55,9 @@ if (isset($_POST['login_button'])) {
 			</table>
 		</form>
 	</div>
+</div>
+
+<?php include('footer.php'); ?>
 </body>
 </html>
 

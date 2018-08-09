@@ -7,11 +7,14 @@
 <!-- SITE STYLE -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/owl.carousel.css"/>
-<link rel="icon" href="image/favicon.ico">
+<link rel="icon" href="../image/favicon.ico">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+<?php 
+echo "<link rel='stylesheet' type='text/css' href='../css/style.css'/>"
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,7 +22,7 @@
 
 <!-- MAKING BANNER -->
 <br>
-  <img id="banner" src="image/banner.jpg" style=" width: 100%;">
+  <img id="banner" src="../image/banner.jpg" style=" width: 100%;">
   <h3>Hanu Library website</h3>
 </br>
 <!-- END BANNER -->
@@ -38,7 +41,19 @@
     <div class="collapse navbar-collapse navHeaderCollapse">
     <ul class="nav navbar-nav">
       <li> <a href="index.php">Home</a></li>
-      <li> <a href="aboutUs.php">About Us</a></li>
+
+   
+   
+    <li class="dropdown">
+    <a href="aboutUs.php">About Us</a>
+        <div class="dropdown-content">
+          <a href="#"> a </a>
+          <a href="#"> a </a>
+          <a href="#"> a </a>
+        </div>
+  </li>
+
+
       <li> <a id="register_button" href="register.php">Register</a></li>
       <li> <a id="login_button" href="login.php">Log In</a></li>
 
@@ -60,7 +75,7 @@
 
   <div id="big_picture" class="jumbotron text-center">
       <h1>Welcome to Hanu's Library website</h1>
-      <img  src="image/Library.jpg"> 
+      <img  src="../image/Library.jpg"> 
   </div>
 
 </header>
