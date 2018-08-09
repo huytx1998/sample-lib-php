@@ -64,7 +64,9 @@ echo "<link rel='stylesheet' type='text/css' href='../css/style.css'/>"
       <li> <a href="logout.php">Log Out</a></li>  
       <?php if (isset($_SESSION['username'])) { ?>
 
-      <li> <a href="#">Welcome <?php echo "<strong> $username </strong>" ?></a></li>
+      <li> <a href="#">Welcome <?php
+      $name = strtoupper($username);
+       echo "<strong> $name </strong>" ?></a></li>
       <?php } ?>   
     </ul> 
   </div>
@@ -75,7 +77,7 @@ echo "<link rel='stylesheet' type='text/css' href='../css/style.css'/>"
 
   <div id="big_picture" class="jumbotron text-center">
       <h1>Welcome to Hanu's Library website</h1>
-      <img  src="../image/Library.jpg"> 
+      <img  src="../image/Library.jpg" style="width: 100%;"> 
   </div>
 
 </header>

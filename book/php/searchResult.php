@@ -19,7 +19,7 @@ include('header.php');
   
 
   <div class="col-md-4 searchRs ">
-    <div> <img src="image/<?php echo $row['image'];  ?>" alt="" class="img-rounded"
+    <div> <img src="../image/<?php echo $row['image'];  ?>" alt="" class="img-rounded"
       style="max-width: 250px; height:250px;">     </div>
      <form method="GET" action="borrow.php" target="_blank"> <br>   
      <input type="text" name="image_name" value = "<?php echo $row['image'];?>" style="display:none">

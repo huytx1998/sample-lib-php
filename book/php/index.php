@@ -15,15 +15,18 @@ $conn = mysqli_connect($servername, "root", "", "book");
   <?php } ?> 
 
   <?php if (isset($_SESSION['username'])) { ?>
-  <li> <a href="#">Welcome <?php echo "<strong> $username, </strong>";
+  <li> <a href="#">Welcome <?php
+  $name = strtoupper($username);
+  echo "<strong> $name, </strong>";
   echo "search for your book here:"; ?></a></li>
   <?php } ?> 
 
 <div class="text-center searchForm">
 <form id="searchBox"  method="GET" action="searchResult.php" target="_blank">
-  <input type="text" placeholder="Search for books.." name="search">
-  <input class="btn btn-default btn-lg" type="submit" name="search_button" value="Search" class="btn">
+  <input id="inputBox" type="text" placeholder="Search for books.." name="search">
+  <input class="btn btn-default btn-md" type="submit" name="search_button" value="Search" class="btn">
 </form>
+
 </div>
 <title>Home Page</title>
 <h3>News</h3>
@@ -63,7 +66,7 @@ if ($rows %3 == 1) {
 
    while($row1_dp = mysqli_fetch_assoc($sql1_result)) {
 	?>
-        <img class="jumbotron" id="news_img" src="../image/<?php echo $row1_dp['image'];?>"> 
+        <img class="jumbotron" id="news_img" src="../image/<?php echo $row1_dp['image'];?>">
          <form method="GET" action="news.php" target="_blank"> 
           <input type = "submit" class="btn btn-primary" value ="Read More"/>
           <input type="text" name="title" value ="<?php echo $row1_dp['title'];?>" style="display:none">

@@ -11,29 +11,40 @@
 	padding: 10% 10% 10% 10%;
 }
 
+#news_img:hover { 
+	opacity: 0.8;
+}
+
 #big_picture {
 	margin: auto;
     width: 70%;
 }
 
 #searchBox {
-	width: 30%;
+	margin: 3%;
+	width: 100%;
 }
 
+#inputBox {
+	width: 40%;
+	height: auto;
+}
 .searchRs {
 	padding: 30px 30px 30px 30px;
 }
 
 .dropdown {
     position: relative;
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
 .dropdown-content {
+	width: 50%;
 	display: none;
+	padding: 10px 10px 10px 10px;
 	position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    background-color: #A9A9A9;
+    min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;	
 }

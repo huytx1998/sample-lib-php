@@ -57,6 +57,8 @@ if (isset($_POST['login_button'])) {
 	</div>
 </div>
 
+<br>
+
 <?php include('footer.php'); ?>
 </body>
 </html>
